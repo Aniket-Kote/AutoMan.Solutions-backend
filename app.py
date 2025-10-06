@@ -23,11 +23,11 @@ def sanitize_input(text):
     # Very basic sanitization (can be enhanced)
     return str(text).replace('\n', ' ').replace('\r', ' ').strip()
 
-@app.before_request
-def enforce_https():
-    # Optional: enforce HTTPS in production (if behind proxy/CDN)
-    if not request.is_secure and os.getenv('FLASK_ENV') == 'production':
-        abort(403, "HTTPS is required.")
+# @app.before_request
+# def enforce_https():
+#     # Optional: enforce HTTPS in production (if behind proxy/CDN)
+#     if not request.is_secure and os.getenv('FLASK_ENV') == 'production':
+#         abort(403, "HTTPS is required.")
 
 @app.route('/send_email', methods=['POST'])
 def send_email():
