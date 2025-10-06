@@ -117,4 +117,4 @@ def send_email():
 if __name__ == '__main__':
     env = os.getenv('FLASK_ENV', 'development')
     debug_mode = env != 'production'
-    app.run(debug=debug_mode)
+    app.run(host='0.0.0.0', port=5000, debug=True)
